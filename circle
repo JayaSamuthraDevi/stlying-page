@@ -1,0 +1,216 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="circle.css">
+        <title>Animated circle design</title>
+    </head>
+    <body>
+        
+        
+        <div class="container">
+            <div class="icon">
+                <div class="imgBx active" style="--i:1"
+                data-id="content1">
+                    <img src="img1.jpg" alt="" >
+                </div>
+         
+                <div class="imgBx" style="--i:2"
+                data-id="content2">
+                    <img src="img2.jpg" alt="" >
+                </div>
+          
+                <div class="imgBx" style="--i:3"
+                data-id="content3">
+                    <img src="img3.jpg" alt="" >
+                </div>
+          
+                <div class="imgBx" style="--i:4"
+                data-id="content4">
+                    <img src="img4.jpg" alt="" >
+                </div>
+           
+                <div class="imgBx" style="--i:5"
+                data-id="content5">
+                    <img src="img5.jpg" alt="" >
+                </div>
+          
+                <div class="imgBx" style="--i:6"
+                data-id="content6">
+                    <img src="img6.jpg" alt="" >
+                </div>
+                <div class="imgBx" style="--i:7"
+                data-id="content7">
+                    <img src="img7.jpg" alt="" >
+                </div>
+           
+                <div class="imgBx" style="--i:8"
+                data-id="content8">
+                    <img src="img8.jpg" alt="" >
+                </div>
+          
+                
+            </div>
+            <div class="content">
+                <div class="contentBx active" id="content1">
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="img1.jpg">
+                        </div>
+                        <div class="textBx">
+                            <h2>Welcome<br>
+                            <span>Welcome</span></h2>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="contentBx" id="content2">
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="img2.jpg">
+                        </div>
+                        <div class="textBx">
+                            <h2>Welcome<br>
+                            <span>Welcome</span></h2>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="contentBx" id="content3">
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="img3.jpg">
+                        </div>
+                        <div class="textBx">
+                            <h2>Welcome<br>
+                            <span>Welcome</span></h2>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="contentBx" id="content4">
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="img4.jpg">
+                        </div>
+                        <div class="textBx">
+                            <h2>Welcome<br>
+                            <span>Welcome</span></h2>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="contentBx" id="content5">
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="img5.jpg">
+                        </div>
+                        <div class="textBx">
+                            <h2>Welcome<br>
+                            <span>Welcome</span></h2>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="contentBx" id="content6">
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="img6.jpg">
+                        </div>
+                        <div class="textBx">
+                            <h2>Welcome<br>
+                            <span>Welcome</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="contentBx" id="content7">
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="img7.jpg">
+                        </div>
+                        <div class="textBx">
+                            <h2>Welcome<br>
+                            <span>Welcome</span></h2>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="contentBx" id="content8">
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="img8.jpg">
+                        </div>
+                        <div class="textBx">
+                            <h2>Welcome<br>
+                            <span>Welcome</span></h2>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        <script>
+            let imgBx =document.querySelectorAll('.imgBx');
+            let contentBx =document.querySelectorAll('.contentBx');
+
+            for(let i=0;i<imgBx.length;i++)
+            {
+                imgBx[i].addEventListener('mouseover',
+                function(){
+                    for(let i=0;i<contentBx.length;i++)
+                    {
+                        contentBx[i].className ='contentBx';
+                    }
+                    document.getElementById(this.dataset.id).
+                    className ='contentBx active';
+                    for(let i=0;i<imgBx.length;i++)
+                    {
+                        imgBx[i].className ='imgBx';
+                    }
+                    
+                    this.className ='imgBx active';
+                })
+            }
+        </script>
+    </body>
+</html>
+
+<!--
+<div class="contentBx" id="content7">
+    <div class="card">
+        <div class="imgBx">
+            <img src="img7.jpg">
+        </div>
+        <div class="textBx">
+            <h2>Hello Someone<br>
+            <span>Welcome</span></h2>
+            
+        </div>
+    </div>
+</div>
+<div class="contentBx" id="content8">
+    <div class="card">
+        <div class="imgBx">
+            <img src="img8.jpg">
+        </div>
+        <div class="textBx">
+            <h2>Hello Someone<br>
+            <span>Welcome</span></h2>
+            
+        </div>
+    </div>
+</div>
+
+
+
+<div class="imgBx" style="--i:7"
+                data-id="content7">
+                    <img src="img7.jpg" alt="" >
+                </div>
+           
+                <div class="imgBx" style="--i:8"
+                data-id="content8">
+                    <img src="img8.jpg" alt="" >
+                </div>
+-->
