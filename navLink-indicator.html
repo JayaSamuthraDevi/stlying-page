@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #604e61;
+}
+    nav{
+        position: relative;
+    display: flex;
+
+background: #231323;
+
+padding: 10px 0;
+}
+nav a
+{
+position: relative;
+
+text-decoration: none;
+
+padding: 15px 25px;
+
+color: #fff;
+
+font-weight: 400;
+
+letter-spacing: 0.1em;
+}
+#marker{
+
+position: absolute;
+
+bottom: 0;
+
+height: 100%;
+
+width: 90px;
+
+border-bottom: 2px solid cyan;
+
+background: linear-gradient(0deg ,cyan,transparent);
+
+transition: 0.5s;
+
+pointer-events: none;
+
+/* filter: drop-shadow(0.5px 4px cyan); */
+}
+</style>
+<body>
+    <nav>
+
+        <a href="#">Home</a>
+        
+        <a href="#">About</a>
+        
+        <a href="#">Portfolio</a>
+        
+        <a href="#">Team</a>
+        
+        <a href="#">Contact</a>
+        
+        <div id="marker"></div>
+        
+    </nav>
+        
+        <script>
+        
+        let marker = document.querySelector("#marker");
+        
+        let item = document.querySelectorAll('nav a');
+        
+        function indicator(e){
+        
+        marker.style.left = e.offsetLeft+"px";
+        marker.style.width= e.offsetWidth+"px";
+        }
+        item.forEach(link =>{
+        
+        link.addEventListener('click', (e) =>{ indicator( e.target);
+        
+         } )
+        })
+        </script>
+</body>
+</html>
