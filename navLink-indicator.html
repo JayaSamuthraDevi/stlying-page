@@ -18,63 +18,86 @@ body{
     nav{
         position: relative;
     display: flex;
-
 background: #231323;
-
 padding: 10px 0;
 }
 nav a
 {
 position: relative;
-
 text-decoration: none;
-
 padding: 15px 25px;
-
 color: #fff;
-
 font-weight: 400;
-
 letter-spacing: 0.1em;
 }
 #marker{
-
 position: absolute;
-
 bottom: 0;
-
 height: 100%;
-
 width: 90px;
-
 border-bottom: 2px solid cyan;
-
 background: linear-gradient(0deg ,cyan,transparent);
-
 transition: 0.5s;
-
 pointer-events: none;
-
 /* filter: drop-shadow(0.5px 4px cyan); */
 }
+.card{
+    margin: 0 auto;
+    padding: 2em;
+    width: 300px;
+    background: #1c1f2b;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  @property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  .card::after, .card::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+  }
+  .card::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+  }
+  @keyframes spin{
+    from{
+      --angle: 0deg;
+    }
+    to{
+      --angle: 360deg;
+    }
+  }
 </style>
 <body>
     <nav>
-
         <a href="#">Home</a>
-        
         <a href="#">About</a>
-        
         <a href="#">Portfolio</a>
-        
         <a href="#">Team</a>
-        
         <a href="#">Contact</a>
-        
         <div id="marker"></div>
-        
     </nav>
         
+    <div class="card">
+        <h1>Animate Borders</h1>
+    </div>
+    
         <script>
         
         let marker = document.querySelector("#marker");
